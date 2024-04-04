@@ -1,0 +1,21 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+jupyter = "*"
+networkx = "*"
+matplotlib = "*"
+graphviz = "*"
+pydot = "*"
+numpy = "*"
+pandas = "*"
+scikit-learn = "*"
+mglearn = "*"
+
+[dev-packages]
+
+[requires]
+python_version = "3.9"
+python_full_version = "3.9.6"

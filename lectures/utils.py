@@ -120,7 +120,7 @@ def plot_tsresiduals(Y, y, acf_lags=np.r_[1:26]):
     lim = -lim, lim
     rax.plot(dy)
     rax.set(ylim=lim, title='Residuals')
-    sns.distplot(dy, bins=np.linspace(lim[0], lim[1], 22),
+    sns.displot(dy, bins=np.linspace(lim[0], lim[1], 22),
                  hist=True, kde=True, rug=True, ax=hax)
     hax.set(title='Residual Distribution')
     sm.graphics.tsa.plot_acf(dy, lags=acf_lags, ax=acfax)
@@ -147,6 +147,9 @@ def MAPE(Y, y):
 
 
 def MASE(Y, y):
+    rw_errors = np.abs(y[1:] - y[:-1])
+    mase = MAE(Y,y) / np.mean(rw_errors)
+
     """TODO"""
     return np.nan  # TODO
 
